@@ -26,8 +26,8 @@ Cons to the traditional approach:
 - Because things are being done one-by-one, larger files
   can cause bottlenecks. Imagine if a chef decided to cook your main
   dish first, THEN your appetizer, because for some reason the
-  waiter listed the main first in the list of food item; now your
-  appetizer is going to awkwardly come out after you main dish.
+  waiter listed the main first in the list of food-items; now your
+  appetizer is going to awkwardly come out after your main dish.
 
 Concurrency approach:
 - Spin up a goroutine for each file to handle the reading and
@@ -39,7 +39,7 @@ Pros to the concurrency approach:
 - No bottlenecks as each file is being worked on in individual goroutines,
   which means that - in the context of this program - the smallest file will
   finish first, even if it's the last to be placed in a goroutine. The chef
-  can now work on the main while their assistant can concurrently work on the
+  can now work on the main while their assistant concurrently prepares the
   appetizer, which is quicker to finish and send out to your table.
 - Overall performance.
 
